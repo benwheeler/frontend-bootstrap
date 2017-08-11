@@ -38,7 +38,8 @@ import play.api.test.Helpers._
 import play.api.test.{FakeApplication, FakeRequest}
 import uk.gov.hmrc.play.audit.http.connector.AuditConnector
 import uk.gov.hmrc.play.audit.model.DataEvent
-import uk.gov.hmrc.play.audit.{EventKeys, EventTypes}
+import uk.gov.hmrc.play.audit.EventKeys
+import uk.gov.hmrc.play.frontend.config.EventTypes
 import uk.gov.hmrc.http.{CookieNames, HeaderCarrier, HeaderNames}
 
 import scala.concurrent.ExecutionContext.Implicits.global

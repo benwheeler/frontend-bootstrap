@@ -23,7 +23,6 @@ import org.mockito.Matchers._
 import org.scalatest.mock.MockitoSugar
 import play.api.mvc.{RequestHeader, Result, Results}
 import play.api.GlobalSettings
-import uk.gov.hmrc.play.audit.EventTypes
 import uk.gov.hmrc.play.audit.http.connector.AuditConnector
 import uk.gov.hmrc.play.audit.http.connector.AuditResult.Success
 import uk.gov.hmrc.play.audit.model.DataEvent

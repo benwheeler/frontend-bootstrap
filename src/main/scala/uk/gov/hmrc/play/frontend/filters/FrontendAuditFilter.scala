@@ -28,7 +28,7 @@ import play.api.mvc._
 import uk.gov.hmrc.http.HeaderCarrier
 import uk.gov.hmrc.play.HeaderCarrierConverter
 import uk.gov.hmrc.play.audit.EventKeys._
-import uk.gov.hmrc.play.audit.EventTypes
+import uk.gov.hmrc.play.frontend.config.EventTypes
 import uk.gov.hmrc.play.audit.http.connector.AuditConnector
 import uk.gov.hmrc.play.frontend.config.HttpAuditEvent
 import uk.gov.hmrc.play.http.logging.MdcLoggingExecutionContext._

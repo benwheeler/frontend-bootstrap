@@ -56,3 +56,10 @@ trait HttpAuditEvent {
   }
 }
 
+object EventTypes {
+  val RequestReceived: String = "RequestReceived"
+  val TransactionFailureReason: String = "transactionFailureReason"
+  val ServerInternalError: String = "ServerInternalError"
+  val ResourceNotFound: String = "ResourceNotFound"
+  val ServerValidationError: String = "ServerValidationError"
+}
