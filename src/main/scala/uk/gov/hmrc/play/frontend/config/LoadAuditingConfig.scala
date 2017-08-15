@@ -16,21 +16,23 @@
 
 package uk.gov.hmrc.play.frontend.config
 
+import play.api.Configuration
 import play.api.Play
 import uk.gov.hmrc.play.audit.http.config.{AuditingConfig, BaseUri, Consumer}
 
 object LoadAuditingConfig {
-  import play.api.Play.current
-
   def apply(key: String): AuditingConfig = {
-    Play.configuration.getConfig(key).map { c =>
+    apply(key, Play.current.configuration)
+  }
+
+  def apply(key: String, config: Configuration): AuditingConfig = {
+    config.getConfig(key).map { c =>
 
       val enabled = c.getBoolean("enabled").getOrElse(true)
 
       if(enabled) {
         AuditingConfig(
           enabled = enabled,
-          traceRequests = c.getBoolean("traceRequests").getOrElse(true),
           consumer = Some(c.getConfig("consumer").map { con =>
             Consumer(
               baseUri = con.getConfig("baseUri").map { uri =>
@@ -44,7 +46,7 @@ object LoadAuditingConfig {
           }.getOrElse(throw new Exception("Missing consumer configuration for auditing")))
         )
       } else {
-        AuditingConfig(consumer = None, enabled = false, traceRequests = false)
+        AuditingConfig(consumer = None, enabled = false)
       }
 
     }
